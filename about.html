@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Get in Touch - TIFFANY.AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#adc6ff",
+                        "surface-variant": "#333539",
+                        "secondary-fixed": "#acedff",
+                        "primary-container": "#4d8eff",
+                        "surface-dim": "#111318",
+                        "surface-tint": "#adc6ff",
+                        "tertiary-container": "#df7412",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "outline-variant": "#424754",
+                        "on-secondary-container": "#00424e",
+                        "on-primary-container": "#00285d",
+                        "on-primary": "#002e6a",
+                        "surface-container-highest": "#333539",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-tertiary": "#502400",
+                        "surface-container-high": "#282a2e",
+                        "error-container": "#93000a",
+                        "surface-container": "#1e2024",
+                        "on-surface": "#e2e2e8",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed": "#001a42",
+                        "inverse-surface": "#e2e2e8",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "background": "#111318",
+                        "secondary-container": "#03b5d3",
+                        "secondary": "#4cd7f6",
+                        "inverse-primary": "#005ac2",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0c0e12",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1a1c20",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-bright": "#37393e",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-tertiary-fixed": "#311400",
+                        "on-secondary": "#003640",
+                        "inverse-on-surface": "#2f3035",
+                        "on-background": "#e2e2e8",
+                        "on-tertiary-container": "#461f00",
+                        "primary": "#adc6ff",
+                        "tertiary": "#ffb786",
+                        "outline": "#8c909f",
+                        "on-primary-fixed-variant": "#004395",
+                        "surface": "#111318",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed": "#ffdcc6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Sora"],
+                        "body-md": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-md": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-mono": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "display-lg": ["72px", { lineHeight: "80px", letterSpacing: "-0.04em", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0C10;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-input:focus {
+            box-shadow: 0 0 20px rgba(76, 215, 246, 0.2);
+            border-color: #4cd7f6;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .gradient-btn {
+            background: linear-gradient(135deg, #4d8eff, #4cd7f6);
+            transition: all 0.3s ease;
+        }
+        .gradient-btn:hover {
+            box-shadow: 0 0 20px rgba(76, 215, 246, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Ambient Background Elements -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-0 left-1/4 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-screen opacity-50"></div>
+<div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] mix-blend-screen opacity-40"></div>
+</div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)] dark:bg-surface/80 transition-all duration-300">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-20 max-md:px-margin-mobile">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface" href="index.html">TIFFANY.AI</a>
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="projects.html">Projects</a>
+<a class="text-secondary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full after:shadow-[0_0_8px_#4cd7f6]" href="about.html">About</a>
+</div>
+<button class="md:hidden text-on-surface" id="mobile-menu-btn" aria-label="Toggle menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden flex-col gap-4 px-margin-mobile pb-6 bg-surface/95" id="mobile-menu">
+<a class="text-on-surface-variant font-body-md text-body-md" href="index.html">Home</a>
+<a class="text-on-surface-variant font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-secondary font-body-md text-body-md" href="about.html">About</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow relative z-10 pt-32 pb-32 px-margin-desktop max-md:px-margin-mobile max-w-container-max mx-auto w-full">
+<!-- Header -->
+<header class="mb-24 text-center">
+<h1 class="font-display-lg text-display-lg max-md:font-headline-lg-mobile max-md:text-headline-lg-mobile text-on-surface mb-6">Get in Touch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Exploring the frontiers of artificial intelligence. Let's build the future together.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-start">
+<!-- About Section (Bento Style) -->
+<section class="flex flex-col gap-8">
+<!-- Bio Card -->
+<div class="glass-panel rounded-xl p-8 h-full flex flex-col justify-center relative overflow-hidden group">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-700"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 rounded-full mb-6 overflow-hidden border border-white/10 p-1 bg-gradient-to-br from-primary-container to-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-[36px]">smart_toy</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Dr. Aris Vance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            Lead AI Architect specializing in generative models and neural network optimization. With over a decade navigating the latent space, I construct sophisticated, high-performance systems for enterprise scaling.
+                        </p>
+<div class="flex items-center gap-4 mt-auto">
+<span class="flex items-center gap-2 text-secondary font-label-mono text-label-mono">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                                Silicon Valley
+                            </span>
+</div>
+</div>
+</div>
+<!-- Skills & Tech Stack -->
+<div class="glass-panel rounded-xl p-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">memory</span>
+                        Neural Stack
+                    </h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full border border-white/10 bg-surface/50 font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors cursor-default">PyTorch</span>
+<span class="px-4 py-2 rounded-full border border-white/10 bg-surface/50 font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors cursor-default">TensorFlow</span>
+<span class="px-4 py-2 rounded-full border border-white/10 bg-surface/50 font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors cursor-default">CUDA</span>
+<span class="px-4 py-2 rounded-full border border-white/10 bg-surface/50 font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors cursor-default">Transformers</span>
+<span class="px-4 py-2 rounded-full border border-white/10 bg-surface/50 font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors cursor-default">JAX</span>
+<span class="px-4 py-2 rounded-full border border-white/10 bg-surface/50 font-label-mono text-label-mono text-on-surface-variant hover:text-primary hover:border-primary/50 transition-colors cursor-default">Rust</span>
+</div>
+</div>
+<!-- Direct Contact -->
+<div class="glass-panel rounded-xl p-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">alternate_email</span>
+                        Direct Channels
+                    </h3>
+<div class="flex flex-col gap-4">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-secondary transition-colors" href="mailto:hello@tiffany.ai">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                            hello@tiffany.ai
+                        </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">code</span>
+                            GitHub
+                        </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">link</span>
+                            LinkedIn
+                        </a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="glass-panel rounded-xl p-8 md:p-10">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">forum</span>
+                    Send a Message
+                </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    Have a project in mind or want to collaborate? Fill out the form below and I'll respond within 48 hours.
+                </p>
+<form action="mailto:hello@tiffany.ai" method="POST" enctype="text/plain" class="flex flex-col gap-6">
+<div>
+<label class="block font-label-mono text-label-mono text-on-surface-variant mb-2" for="name">Name</label>
+<input class="w-full rounded-lg bg-surface/50 border border-white/10 text-on-surface font-body-md text-body-md px-4 py-3 focus:outline-none glow-input transition-all placeholder:text-outline" id="name" name="name" placeholder="Ada Lovelace" required="" type="text">
+</div>
+<div>
+<label class="block font-label-mono text-label-mono text-on-surface-variant mb-2" for="email">Email</label>
+<input class="w-full rounded-lg bg-surface/50 border border-white/10 text-on-surface font-body-md text-body-md px-4 py-3 focus:outline-none glow-input transition-all placeholder:text-outline" id="email" name="email" placeholder="ada@example.com" required="" type="email">
+</div>
+<div>
+<label class="block font-label-mono text-label-mono text-on-surface-variant mb-2" for="message">Message</label>
+<textarea class="w-full rounded-lg bg-surface/50 border border-white/10 text-on-surface font-body-md text-body-md px-4 py-3 focus:outline-none glow-input transition-all resize-none placeholder:text-outline" id="message" name="message" placeholder="Tell me about your project..." required="" rows="5"></textarea>
+</div>
+<button class="gradient-btn w-full py-4 rounded-lg text-on-primary-container font-body-md font-semibold text-center flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+                        Send Message
+                    </button>
+</form>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-surface-dim dark:bg-surface-dim border-t border-white/5 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-on-surface" href="index.html">TIFFANY.AI</a>
+<div class="flex items-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="about.html">Documentation</a>
+</div>
+<p class="text-on-surface-variant font-label-mono text-label-mono text-sm">© 2026 TIFFANY.AI - High-End AI Frontiers</p>
+</div>
+</footer>
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+</script>
+</body></html>

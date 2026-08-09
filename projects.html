@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>The AI Laboratory - TIFFANY.AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-variant": "#333539",
+                      "secondary-fixed": "#acedff",
+                      "primary-container": "#4d8eff",
+                      "surface-dim": "#111318",
+                      "surface-tint": "#adc6ff",
+                      "tertiary-container": "#df7412",
+                      "on-tertiary-fixed-variant": "#723600",
+                      "outline-variant": "#424754",
+                      "on-secondary-container": "#00424e",
+                      "on-primary-container": "#00285d",
+                      "on-primary": "#002e6a",
+                      "surface-container-highest": "#333539",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "on-tertiary": "#502400",
+                      "surface-container-high": "#282a2e",
+                      "error-container": "#93000a",
+                      "surface-container": "#1e2024",
+                      "on-surface": "#e2e2e8",
+                      "primary-fixed": "#d8e2ff",
+                      "on-primary-fixed": "#001a42",
+                      "inverse-surface": "#e2e2e8",
+                      "tertiary-fixed-dim": "#ffb786",
+                      "background": "#111318",
+                      "secondary-container": "#03b5d3",
+                      "secondary": "#4cd7f6",
+                      "inverse-primary": "#005ac2",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#0c0e12",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#1a1c20",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "surface-bright": "#37393e",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c2c6d6",
+                      "on-tertiary-fixed": "#311400",
+                      "on-secondary": "#003640",
+                      "inverse-on-surface": "#2f3035",
+                      "on-background": "#e2e2e8",
+                      "on-tertiary-container": "#461f00",
+                      "primary": "#adc6ff",
+                      "tertiary": "#ffb786",
+                      "outline": "#8c909f",
+                      "on-primary-fixed-variant": "#004395",
+                      "surface": "#111318",
+                      "on-secondary-fixed": "#001f26",
+                      "tertiary-fixed": "#ffdcc6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Sora"],
+                      "body-md": ["Inter"],
+                      "label-mono": ["JetBrains Mono"],
+                      "headline-md": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "display-lg": ["Sora"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(30, 32, 36, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(76, 215, 246, 0.3);
+            box-shadow: 0 0 30px rgba(76, 215, 246, 0.1);
+            transform: translateY(-4px);
+        }
+        .tech-chip {
+            background: rgba(17, 19, 24, 0.6);
+            border: 1px solid rgba(140, 144, 159, 0.3);
+            transition: all 0.3s ease;
+        }
+        .tech-chip:hover {
+            border-color: #4cd7f6;
+            color: #4cd7f6;
+            background: rgba(76, 215, 246, 0.1);
+        }
+        .card-link { display: block; text-decoration: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface" href="index.html">TIFFANY.AI</a>
+<ul class="hidden md:flex space-x-8 items-center">
+<li>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md text-body-md" href="index.html">Home</a>
+</li>
+<li>
+<a class="text-secondary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full after:shadow-[0_0_8px_#4cd7f6] font-body-md text-body-md" href="projects.html">Projects</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md text-body-md" href="about.html">About</a>
+</li>
+</ul>
+<button class="md:hidden text-on-surface" id="mobile-menu-btn" aria-label="Toggle menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden flex-col gap-4 px-margin-mobile pb-6 bg-surface/95" id="mobile-menu">
+<a class="text-on-surface-variant font-body-md text-body-md" href="index.html">Home</a>
+<a class="text-secondary font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-on-surface-variant font-body-md text-body-md" href="about.html">About</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<header class="mb-20 text-center md:text-left">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">The AI Laboratory</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Exploring the frontiers of machine learning. A curated grid of our most advanced artificial intelligence implementations, spanning natural language processing to computer vision.
+            </p>
+</header>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<a class="card-link" href="project-detail.html">
+<div class="glass-card rounded-xl p-8 flex flex-col h-full transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface text-[24px] leading-tight">Neural Nexus</h2>
+</div>
+<div class="flex-grow mb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        An advanced neural network architecture designed for real-time semantic analysis of unstructured data streams, utilizing dynamic node routing for optimal latency.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">PyTorch</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">CUDA</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">Python</span>
+</div>
+</div>
+</a>
+<!-- Project Card 2 -->
+<a class="card-link" href="project-detail.html">
+<div class="glass-card rounded-xl p-8 flex flex-col h-full transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface text-[24px] leading-tight">OmniVision AI</h2>
+</div>
+<div class="flex-grow mb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        High-fidelity computer vision model capable of multi-object tracking and spatial mapping in low-light environments, leveraging a proprietary transformer architecture.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">TensorFlow</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">OpenCV</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">C++</span>
+</div>
+</div>
+</a>
+<!-- Project Card 3 -->
+<a class="card-link" href="project-detail.html">
+<div class="glass-card rounded-xl p-8 flex flex-col h-full transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">translate</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface text-[24px] leading-tight">Polyglot Gen</h2>
+</div>
+<div class="flex-grow mb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        A large language model fine-tuned for specialized technical translation, maintaining contextual integrity across complex engineering and medical documents.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">GPT-4</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">Hugging Face</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">React</span>
+</div>
+</div>
+</a>
+<!-- Project Card 4 -->
+<a class="card-link lg:col-span-2" href="project-detail.html">
+<div class="glass-card rounded-xl p-8 flex flex-col h-full transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 flex flex-col">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface text-[24px] leading-tight">Quantum Sim</h2>
+</div>
+<div class="flex-grow mb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Simulating quantum circuit behaviors using machine learning proxies to accelerate algorithm development without requiring access to physical quantum hardware. This project represents a bridge between classical ML and quantum computing.
+                            </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">Qiskit</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">JAX</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">Python</span>
+</div>
+</div>
+<div class="hidden md:block w-1/3 bg-surface rounded-lg relative overflow-hidden border border-white/10" style="min-height: 200px;">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/20 text-[64px]">scatter_plot</span>
+</div>
+</div>
+</div>
+</div>
+</a>
+<!-- Project Card 5 -->
+<a class="card-link" href="project-detail.html">
+<div class="glass-card rounded-xl p-8 flex flex-col h-full transition-all duration-300">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">data_exploration</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface text-[24px] leading-tight">Predictive Sync</h2>
+</div>
+<div class="flex-grow mb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Time-series forecasting model optimized for volatile financial markets, incorporating sentiment analysis from global news feeds to adjust risk models on the fly.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">Keras</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">Pandas</span>
+<span class="tech-chip px-3 py-1 rounded text-label-mono font-label-mono text-outline-variant">FastAPI</span>
+</div>
+</div>
+</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-surface-dim dark:bg-surface-dim border-t border-white/5 flat">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-on-surface mb-6 md:mb-0" href="index.html">
+                TIFFANY.AI
+            </a>
+<ul class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<li>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md transition-opacity hover:opacity-80" href="#">Twitter</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md transition-opacity hover:opacity-80" href="#">GitHub</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md transition-opacity hover:opacity-80" href="about.html">Documentation</a>
+</li>
+</ul>
+<div class="text-on-surface-variant font-body-md text-body-md text-sm">
+                © 2026 TIFFANY.AI - High-End AI Frontiers
+            </div>
+</div>
+</footer>
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+</script>
+</body></html>

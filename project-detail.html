@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Neural Nexus - Project Deep Dive - TIFFANY.AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-variant": "#333539",
+                      "secondary-fixed": "#acedff",
+                      "primary-container": "#4d8eff",
+                      "surface-dim": "#111318",
+                      "surface-tint": "#adc6ff",
+                      "tertiary-container": "#df7412",
+                      "on-tertiary-fixed-variant": "#723600",
+                      "outline-variant": "#424754",
+                      "on-secondary-container": "#00424e",
+                      "on-primary-container": "#00285d",
+                      "on-primary": "#002e6a",
+                      "surface-container-highest": "#333539",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "on-tertiary": "#502400",
+                      "surface-container-high": "#282a2e",
+                      "error-container": "#93000a",
+                      "surface-container": "#1e2024",
+                      "on-surface": "#e2e2e8",
+                      "primary-fixed": "#d8e2ff",
+                      "on-primary-fixed": "#001a42",
+                      "inverse-surface": "#e2e2e8",
+                      "tertiary-fixed-dim": "#ffb786",
+                      "background": "#111318",
+                      "secondary-container": "#03b5d3",
+                      "secondary": "#4cd7f6",
+                      "inverse-primary": "#005ac2",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#0c0e12",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#1a1c20",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "surface-bright": "#37393e",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c2c6d6",
+                      "on-tertiary-fixed": "#311400",
+                      "on-secondary": "#003640",
+                      "inverse-on-surface": "#2f3035",
+                      "on-background": "#e2e2e8",
+                      "on-tertiary-container": "#461f00",
+                      "primary": "#adc6ff",
+                      "tertiary": "#ffb786",
+                      "outline": "#8c909f",
+                      "on-primary-fixed-variant": "#004395",
+                      "surface": "#111318",
+                      "on-secondary-fixed": "#001f26",
+                      "tertiary-fixed": "#ffdcc6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Sora"],
+                      "body-md": ["Inter"],
+                      "label-mono": ["JetBrains Mono"],
+                      "headline-md": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "display-lg": ["Sora"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-x-hidden min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-xl dark:bg-surface/80 fixed top-0 w-full z-50 border-b border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface" href="index.html">
+                TIFFANY.AI
+            </a>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md text-body-md hover:scale-105 active:scale-95 transition-transform" href="index.html">Home</a>
+<a class="text-secondary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full after:shadow-[0_0_8px_#4cd7f6] font-body-md text-body-md hover:scale-105 active:scale-95 transition-transform" href="projects.html">Projects</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-body-md text-body-md hover:scale-105 active:scale-95 transition-transform" href="about.html">About</a>
+</div>
+<button class="md:hidden text-on-surface" id="mobile-menu-btn" aria-label="Toggle menu">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden flex-col gap-4 px-margin-mobile pb-6 bg-surface/95" id="mobile-menu">
+<a class="text-on-surface-variant font-body-md text-body-md" href="index.html">Home</a>
+<a class="text-secondary font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-on-surface-variant font-body-md text-body-md" href="about.html">About</a>
+</div>
+</nav>
+<main class="pt-20 pb-32">
+<!-- Hero Banner -->
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-end pb-16 pt-32 px-margin-mobile md:px-margin-desktop bg-surface-container overflow-hidden group">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 via-secondary/10 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-10 group-hover:scale-105 transition-transform duration-1000 ease-out">
+<span class="material-symbols-outlined text-white text-[240px]">hub</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto w-full">
+<div class="flex flex-col gap-4 max-w-3xl">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-secondary font-label-mono text-label-mono text-xs shadow-[0_0_10px_rgba(76,215,246,0.2)]">PRODUCTION</span>
+<span class="text-on-surface-variant font-label-mono text-label-mono text-sm tracking-wider">v2.4.0</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant mb-2">Neural Nexus</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                        A high-fidelity distributed machine learning framework designed for real-time edge processing and autonomous system orchestration.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-12">
+<!-- Left Column: About & Features -->
+<div class="lg:col-span-8 flex flex-col gap-16">
+<div class="flex flex-col gap-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface flex items-center gap-4">
+<span class="w-8 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
+                        About this Project
+                    </h2>
+<div class="p-8 md:p-10 rounded-2xl bg-surface/40 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                            Neural Nexus was conceived to bridge the gap between heavy cloud-based LLMs and lightweight edge devices. By implementing a novel sparse-attention mechanism and dynamic quantization, we achieved a 40% reduction in memory footprint without sacrificing inference quality.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            The architecture relies heavily on asynchronous microservices, orchestrated via Kubernetes, allowing seamless scaling across heterogeneous hardware clusters. The project demonstrates a profound leap in federated learning paradigms, specifically tailored for latency-sensitive environments like autonomous drone swarms.
+                        </p>
+</div>
+</div>
+<!-- Core Features -->
+<div class="flex flex-col gap-6">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">architecture</span>
+                        Core Architecture Features
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">speed</span>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Dynamic Quantization</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Real-time INT8 quantization adapting to hardware constraints without manual intervention.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">hub</span>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Federated Sync</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Secure, differential privacy-enabled parameter synchronization across untrusted nodes.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">memory</span>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Sparse Attention</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Custom CUDA kernels implementing highly efficient sparse attention for long context windows.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">monitoring</span>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Telemetry Mesh</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Integrated Prometheus/Grafana mesh for deep observability into model latency and drift.</p>
+</div>
+</div>
+</div>
+<!-- Performance Metrics -->
+<div class="p-8 rounded-2xl bg-gradient-to-br from-surface-container-high to-surface border border-white/5">
+<h3 class="font-headline-md text-2xl text-on-surface mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                        Key Metrics
+                    </h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
+<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">12ms</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Avg Latency</div>
+</div>
+<div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
+<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">40%</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Mem Reduction</div>
+</div>
+<div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
+<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">99.9%</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Uptime</div>
+</div>
+<div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
+<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">50M+</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Req/Day</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<div class="p-8 rounded-2xl bg-surface-container border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.2)] lg:sticky lg:top-28">
+<h3 class="font-headline-md text-xl text-on-surface mb-6">Explore the Project</h3>
+<div class="flex flex-col gap-4">
+<a class="w-full py-4 rounded-lg bg-gradient-to-r from-primary-container to-secondary text-on-primary-container font-body-md font-semibold text-center hover:shadow-[0_0_20px_rgba(76,215,246,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                            Launch Live Demo
+                        </a>
+<a class="w-full py-4 rounded-lg bg-surface-variant border border-outline-variant text-on-surface font-body-md font-medium text-center hover:bg-surface-bright transition-colors duration-300 flex items-center justify-center gap-2 group" href="https://github.com" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors" style="font-variation-settings: 'FILL' 0;">code</span>
+                            View Source Code
+                        </a>
+</div>
+<hr class="border-white/5 my-8">
+<div>
+<h4 class="font-label-mono text-sm text-on-surface-variant mb-4 uppercase tracking-widest">Technology Stack</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">PyTorch</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">CUDA C++</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Go</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">gRPC</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Kubernetes</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">TensorRT</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+<span class="font-body-md text-sm text-on-surface-variant">Last Updated</span>
+<span class="font-label-mono text-sm text-on-surface">Aug 9, 2026</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-secondary font-label-mono text-label-mono transition-colors" href="projects.html">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Back to All Projects
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim dark:bg-surface-dim w-full py-16 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-on-surface" href="index.html">TIFFANY.AI</a>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-opacity hover:opacity-80" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 transition-opacity hover:opacity-80" href="about.html">Documentation</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2026 TIFFANY.AI - High-End AI Frontiers</p>
+</div>
+</footer>
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+</script>
+</body></html>

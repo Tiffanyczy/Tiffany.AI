@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TIFFANY.AI - AI Engineer & Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#adc6ff",
+                      "surface-variant": "#333539",
+                      "secondary-fixed": "#acedff",
+                      "primary-container": "#4d8eff",
+                      "surface-dim": "#111318",
+                      "surface-tint": "#adc6ff",
+                      "tertiary-container": "#df7412",
+                      "on-tertiary-fixed-variant": "#723600",
+                      "outline-variant": "#424754",
+                      "on-secondary-container": "#00424e",
+                      "on-primary-container": "#00285d",
+                      "on-primary": "#002e6a",
+                      "surface-container-highest": "#333539",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "on-tertiary": "#502400",
+                      "surface-container-high": "#282a2e",
+                      "error-container": "#93000a",
+                      "surface-container": "#1e2024",
+                      "on-surface": "#e2e2e8",
+                      "primary-fixed": "#d8e2ff",
+                      "on-primary-fixed": "#001a42",
+                      "inverse-surface": "#e2e2e8",
+                      "tertiary-fixed-dim": "#ffb786",
+                      "background": "#111318",
+                      "secondary-container": "#03b5d3",
+                      "secondary": "#4cd7f6",
+                      "inverse-primary": "#005ac2",
+                      "on-error": "#690005",
+                      "surface-container-lowest": "#0c0e12",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#1a1c20",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "surface-bright": "#37393e",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c2c6d6",
+                      "on-tertiary-fixed": "#311400",
+                      "on-secondary": "#003640",
+                      "inverse-on-surface": "#2f3035",
+                      "on-background": "#e2e2e8",
+                      "on-tertiary-container": "#461f00",
+                      "primary": "#adc6ff",
+                      "tertiary": "#ffb786",
+                      "outline": "#8c909f",
+                      "on-primary-fixed-variant": "#004395",
+                      "surface": "#111318",
+                      "on-secondary-fixed": "#001f26",
+                      "tertiary-fixed": "#ffdcc6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "container-max": "1280px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Sora"],
+                      "body-md": ["Inter"],
+                      "label-mono": ["JetBrains Mono"],
+                      "headline-md": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "display-lg": ["Sora"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .neural-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(76, 215, 246, 0.03) 0%, transparent 60%);
+        }
+        .glow-btn {
+            box-shadow: 0 0 20px rgba(76, 215, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 30px rgba(76, 215, 246, 0.5);
+        }
+        .tech-chip {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .tech-chip:hover {
+            border-color: #4cd7f6;
+            background: rgba(76, 215, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative overflow-x-hidden neural-bg">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-b border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface hover:scale-105 active:scale-95 transition-transform" href="index.html">
+                TIFFANY.AI
+            </a>
+<div class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md text-secondary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full after:shadow-[0_0_8px_#4cd7f6]" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="projects.html">Projects</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">About</a>
+</div>
+<button class="md:hidden text-on-surface" id="mobile-menu-btn" aria-label="Toggle menu">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden flex-col gap-4 px-margin-mobile pb-6 bg-surface/95" id="mobile-menu">
+<a class="text-secondary font-body-md text-body-md" href="index.html">Home</a>
+<a class="text-on-surface-variant font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-on-surface-variant font-body-md text-body-md" href="about.html">About</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop min-h-[70vh] flex flex-col justify-center items-start relative z-10">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-white/10 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_#4cd7f6] animate-pulse"></span>
+<span class="font-label-mono text-label-mono text-secondary">AI Engineer &amp; Architect</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-8 leading-tight">
+                    Building the Future with Neural Logic
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl">
+                    Specializing in high-performance machine learning models, autonomous agents, and elegant generative AI solutions. Bridging the gap between raw computational power and refined user experiences.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-primary-container to-secondary text-on-primary-container font-label-mono text-label-mono font-bold glow-btn hover:scale-105 transition-transform gap-2" href="#projects">
+                        View My Work
+                        <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-surface-container border border-white/10 text-on-surface font-label-mono text-label-mono hover:bg-surface-container-high hover:border-secondary transition-all gap-2" href="https://github.com" target="_blank" rel="noopener noreferrer">
+                        GitHub Profile
+                        <span class="material-symbols-outlined text-[20px]">code</span>
+</a>
+</div>
+</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary-container/5 blur-[120px] pointer-events-none hidden lg:block"></div>
+</section>
+<!-- Featured Project Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-32" id="projects">
+<div class="flex items-center gap-4 mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Featured Project</h2>
+<div class="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent"></div>
+</div>
+<div class="relative group rounded-3xl overflow-hidden border border-white/10 bg-surface/40 backdrop-blur-xl p-1 md:p-2 transition-all hover:border-secondary/30">
+<div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-10 relative z-10">
+<div class="flex flex-col justify-center order-2 lg:order-1">
+<div class="flex gap-2 mb-6 flex-wrap">
+<span class="tech-chip px-3 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-mono text-label-mono text-[12px]">PyTorch</span>
+<span class="tech-chip px-3 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-mono text-label-mono text-[12px]">CUDA</span>
+<span class="tech-chip px-3 py-1 rounded bg-surface-container-high text-on-surface-variant font-label-mono text-label-mono text-[12px]">Next.js</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Nexus.ai - Generative Engine</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            A highly optimized, distributed inference engine capable of generating multi-modal outputs in real-time. Designed with a custom attention mechanism to reduce latency by 40% compared to standard transformer models.
+                        </p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-mono text-label-mono hover:text-white transition-colors group/link w-fit" href="project-detail.html">
+                            Explore Technical Writeup
+                            <span class="material-symbols-outlined text-[18px] transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="order-1 lg:order-2 rounded-2xl overflow-hidden h-[300px] lg:h-[400px] relative bg-surface-container-low border border-white/5">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/30 via-secondary/10 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white/10 text-[96px]">hub</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Projects Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+<div class="col-span-1 md:col-span-2 rounded-3xl p-8 border border-white/10 bg-surface/30 backdrop-blur-lg hover:border-white/20 transition-colors flex flex-col justify-between min-h-[300px] group">
+<div>
+<span class="material-symbols-outlined text-secondary mb-4 text-[32px]">database</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">VectorStore Pro</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">High-dimensional similarity search database tailored for semantic memory retrieval in autonomous agents.</p>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div class="flex gap-2">
+<span class="tech-chip px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-mono text-[10px]">Rust</span>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center text-on-surface hover:text-secondary hover:border-secondary transition-all group-hover:-translate-y-1" href="projects.html">
+<span class="material-symbols-outlined text-[20px]">north_east</span>
+</a>
+</div>
+</div>
+<div class="col-span-1 rounded-3xl p-8 border border-white/10 bg-surface/30 backdrop-blur-lg hover:border-white/20 transition-colors flex flex-col justify-between min-h-[300px] group">
+<div>
+<span class="material-symbols-outlined text-secondary mb-4 text-[32px]">memory</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Auto-Tuner</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Automated hyperparameter optimization toolkit using Bayesian methods.</p>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div class="flex gap-2">
+<span class="tech-chip px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-mono text-[10px]">Python</span>
+</div>
+<a class="w-10 h-10 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center text-on-surface hover:text-secondary hover:border-secondary transition-all group-hover:-translate-y-1" href="projects.html">
+<span class="material-symbols-outlined text-[20px]">north_east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-16">
+<a class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-surface-container border border-white/10 text-on-surface font-label-mono text-label-mono hover:bg-surface-container-high hover:border-secondary transition-all" href="projects.html">
+                    View All Projects
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 bg-surface-dim dark:bg-surface-dim border-t border-white/5 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-gutter">
+<a class="font-headline-md text-headline-md font-bold text-on-surface transition-opacity hover:opacity-80" href="index.html">
+                TIFFANY.AI
+            </a>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left order-3 md:order-none mt-4 md:mt-0">
+                © 2026 TIFFANY.AI - High-End AI Frontiers
+            </p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors transition-opacity hover:opacity-80" href="about.html">Documentation</a>
+</div>
+</div>
+</footer>
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.getElementById('mobile-menu').classList.toggle('flex');
+    });
+</script>
+</body></html>
