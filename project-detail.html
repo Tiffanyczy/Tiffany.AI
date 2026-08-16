@@ -131,12 +131,18 @@
 <div class="relative z-10 max-w-container-max mx-auto w-full">
 <div class="flex flex-col gap-4 max-w-3xl">
 <div class="flex items-center gap-3 mb-2">
-<span class="px-3 py-1 rounded-full border border-secondary/30 bg-secondary/10 text-secondary font-label-mono text-label-mono text-xs shadow-[0_0_10px_rgba(76,215,246,0.2)]">PRODUCTION</span>
-<span class="text-on-surface-variant font-label-mono text-label-mono text-sm tracking-wider">v2.4.0</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-tertiary/30 bg-tertiary/10 text-tertiary font-label-mono text-label-mono text-xs shadow-[0_0_10px_rgba(255,183,134,0.2)]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">science</span>
+                            PROTOTYPE
+                        </span>
+<span class="text-on-surface-variant font-label-mono text-label-mono text-sm tracking-wider">v0.1.0</span>
 </div>
 <h1 class="font-display-lg text-display-lg text-on-surface text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant mb-2">Deep Liquidity</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
                         A high-fidelity distributed machine learning framework designed for real-time edge processing and autonomous system orchestration.
+                    </p>
+<p class="font-label-mono text-label-mono text-tertiary text-sm">
+                        Early-stage prototype — not yet in production.
                     </p>
 </div>
 </div>
@@ -152,10 +158,10 @@
                     </h2>
 <div class="p-8 md:p-10 rounded-2xl bg-surface/40 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-                            Deep Liquidity was conceived to bridge the gap between heavy cloud-based LLMs and lightweight edge devices. By implementing a novel sparse-attention mechanism and dynamic quantization, we achieved a 40% reduction in memory footprint without sacrificing inference quality.
+                            Deep Liquidity is an early-stage prototype exploring how to bridge the gap between heavy cloud-based LLMs and lightweight edge devices. Initial experiments with a sparse-attention mechanism and dynamic quantization point to a promising ~40% reduction in memory footprint, though this hasn't been validated at scale.
                         </p>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            The architecture relies heavily on asynchronous microservices, orchestrated via Kubernetes, allowing seamless scaling across heterogeneous hardware clusters. The project demonstrates a profound leap in federated learning paradigms, specifically tailored for latency-sensitive environments like autonomous drone swarms.
+                            The architecture is being designed around asynchronous microservices, with Kubernetes orchestration planned to support scaling across heterogeneous hardware clusters down the line. The long-term goal is federated learning for latency-sensitive environments like autonomous drone swarms — but for now, this is a proof-of-concept, not a deployed system.
                         </p>
 </div>
 </div>
@@ -200,24 +206,24 @@
 <div class="p-8 rounded-2xl bg-gradient-to-br from-surface-container-high to-surface border border-white/5">
 <h3 class="font-headline-md text-2xl text-on-surface mb-6 flex items-center gap-3">
 <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">analytics</span>
-                        Key Metrics
+                        Early Prototype Benchmarks
                     </h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
-<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">12ms</div>
-<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Avg Latency</div>
+<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">~12ms</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Target Latency</div>
 </div>
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
-<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">40%</div>
-<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Mem Reduction</div>
+<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">~40%</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Target Mem Reduction</div>
 </div>
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
-<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">99.9%</div>
-<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Uptime</div>
+<div class="font-display-lg text-3xl md:text-4xl text-tertiary mb-1">Alpha</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Stage</div>
 </div>
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
-<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">50M+</div>
-<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Req/Day</div>
+<div class="font-display-lg text-3xl md:text-4xl text-tertiary mb-1">Solo</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Built By</div>
 </div>
 </div>
 </div>
