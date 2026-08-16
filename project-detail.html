@@ -124,7 +124,7 @@
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 via-secondary/10 to-transparent"></div>
 <div class="absolute inset-0 flex items-center justify-center opacity-10 group-hover:scale-105 transition-transform duration-1000 ease-out">
-<span class="material-symbols-outlined text-white text-[240px]">hub</span>
+<span class="material-symbols-outlined text-white text-[240px]">finance</span>
 </div>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
 </div>
@@ -139,7 +139,7 @@
 </div>
 <h1 class="font-display-lg text-display-lg text-on-surface text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant mb-2">Deep Liquidity</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
-                        A high-fidelity distributed machine learning framework designed for real-time edge processing and autonomous system orchestration.
+                        An AI-powered market intelligence dashboard that turns raw price, volume, and liquidity data into clear, explainable market narratives.
                     </p>
 <p class="font-label-mono text-label-mono text-tertiary text-sm">
                         Early-stage prototype — not yet in production.
@@ -158,10 +158,10 @@
                     </h2>
 <div class="p-8 md:p-10 rounded-2xl bg-surface/40 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
-                            Deep Liquidity is an early-stage prototype exploring how to bridge the gap between heavy cloud-based LLMs and lightweight edge devices. Initial experiments with a sparse-attention mechanism and dynamic quantization point to a promising ~40% reduction in memory footprint, though this hasn't been validated at scale.
+                            Deep Liquidity is a market intelligence dashboard that surfaces why the market is moving, not just where prices are. The Markets view tracks major indices — S&amp;P 500, NASDAQ, Dow Jones, Russell 2000, and Bitcoin — alongside an AI-generated "Market Pulse": a synthesized narrative connecting today's biggest movers to the catalysts behind them.
                         </p>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                            The architecture is being designed around asynchronous microservices, with Kubernetes orchestration planned to support scaling across heterogeneous hardware clusters down the line. The long-term goal is federated learning for latency-sensitive environments like autonomous drone swarms — but for now, this is a proof-of-concept, not a deployed system.
+                            The Insights view drills into a single ticker across timeframes from 1D to 1Y, pairing the price chart with a catalyst timeline of timestamped liquidity events — opening surges, block trades, closing imbalances — plus macro context like Fed policy commentary and a retail-vs-institutional sentiment score. A built-in Gemini AI analyst can generate on-demand sentiment, earnings, and options-flow analysis for whatever ticker and date you're looking at, and a Watchlist view lets you track your own set of tickers.
                         </p>
 </div>
 </div>
@@ -169,36 +169,36 @@
 <div class="flex flex-col gap-6">
 <h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-4">
 <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">architecture</span>
-                        Core Architecture Features
+                        Core Features
                     </h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
 <div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">speed</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
 </div>
-<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Dynamic Quantization</h3>
-<p class="font-body-md text-sm text-on-surface-variant">Real-time INT8 quantization adapting to hardware constraints without manual intervention.</p>
-</div>
-<div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
-<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">hub</span>
-</div>
-<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Federated Sync</h3>
-<p class="font-body-md text-sm text-on-surface-variant">Secure, differential privacy-enabled parameter synchronization across untrusted nodes.</p>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">AI Market Pulse</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Gemini synthesizes today's biggest market movers into a plain-language narrative, refreshed on demand.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
 <div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">memory</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">schedule</span>
 </div>
-<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Sparse Attention</h3>
-<p class="font-body-md text-sm text-on-surface-variant">Custom CUDA kernels implementing highly efficient sparse attention for long context windows.</p>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Catalyst Timeline</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Timestamped liquidity events — opens, block trades, closes — mapped against intraday price action for any ticker.</p>
 </div>
 <div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
 <div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">monitoring</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">mood</span>
 </div>
-<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Telemetry Mesh</h3>
-<p class="font-body-md text-sm text-on-surface-variant">Integrated Prometheus/Grafana mesh for deep observability into model latency and drift.</p>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Sentiment Scoring</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Retail-vs-institutional sentiment gauges, plus a Gemini-generated analyst readout for earnings and options flow.</p>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-white/5 hover:border-secondary/30 hover:bg-surface-container-high transition-all duration-300 group">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-4 border border-white/10 group-hover:shadow-[0_0_15px_rgba(76,215,246,0.2)] transition-shadow">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</div>
+<h3 class="font-headline-md text-xl font-semibold text-on-surface mb-2">Personal Watchlist</h3>
+<p class="font-body-md text-sm text-on-surface-variant">Add, edit, and track a custom set of tickers with live price, % change, and market cap.</p>
 </div>
 </div>
 </div>
@@ -206,16 +206,16 @@
 <div class="p-8 rounded-2xl bg-gradient-to-br from-surface-container-high to-surface border border-white/5">
 <h3 class="font-headline-md text-2xl text-on-surface mb-6 flex items-center gap-3">
 <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">analytics</span>
-                        Early Prototype Benchmarks
+                        At a Glance
                     </h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
-<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">~12ms</div>
-<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Target Latency</div>
+<div class="font-display-lg text-3xl md:text-4xl text-primary mb-1">6</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Tracked Tickers</div>
 </div>
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
-<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">~40%</div>
-<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Target Mem Reduction</div>
+<div class="font-display-lg text-3xl md:text-4xl text-secondary mb-1">5</div>
+<div class="font-label-mono text-xs text-on-surface-variant uppercase tracking-wider">Timeframes</div>
 </div>
 <div class="p-4 rounded-lg bg-surface/50 border border-white/5 text-center">
 <div class="font-display-lg text-3xl md:text-4xl text-tertiary mb-1">Alpha</div>
@@ -246,17 +246,16 @@
 <div>
 <h4 class="font-label-mono text-sm text-on-surface-variant mb-4 uppercase tracking-widest">Technology Stack</h4>
 <div class="flex flex-wrap gap-2">
-<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">PyTorch</span>
-<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">CUDA C++</span>
-<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Go</span>
-<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">gRPC</span>
-<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Kubernetes</span>
-<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">TensorRT</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">React</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Vite</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Tailwind CSS</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Gemini API</span>
+<span class="px-3 py-1.5 rounded bg-surface border border-white/10 font-label-mono text-xs text-on-surface hover:border-secondary/50 hover:text-secondary transition-colors cursor-default">Netlify</span>
 </div>
 </div>
 <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
 <span class="font-body-md text-sm text-on-surface-variant">Last Updated</span>
-<span class="font-label-mono text-sm text-on-surface">Aug 9, 2026</span>
+<span class="font-label-mono text-sm text-on-surface">Aug 16, 2026</span>
 </div>
 </div>
 <a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-secondary font-label-mono text-label-mono transition-colors" href="projects.html">
